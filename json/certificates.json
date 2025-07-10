@@ -10,5 +10,11 @@
     "description": "Ethical Hacking Essentials (EHE) is an entry-level certification by EC-Council that provides fundamental knowledge and skills in penetration testing and ethical hacking.",
     "link": "https://media.licdn.com/dms/image/v2/D4D2DAQHoYXyAf786VA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1715787335648?e=1752714000&v=beta&t=YGELxLfwyXqAsxFNtzrctw42yW7zGr-1z64ZqCUGh9o",
     "image": "https://eccommonstorage.blob.core.windows.net/codered/certificates/2ceaa9e8-3069-4524-9cfa-6d68256bd7fb.png"
+  },
+  {
+    "title": "CompTIA Pentest+ (TryHackMe)",
+    "description": "CompTIA PenTest+ (TryHackMe) is a hands-on penetration testing course focused on teaching mid-level offensive security skills through practical scenarios and methodologies.",
+    "link": "https://www.linkedin.com/in/hackyman/details/certifications/1715787799363/single-media-viewer/?profileId=ACoAAC0XcqUBAPnzn6Noh28KPxqafl7767Lf-0Y",
+    "image": "https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-2VZAGJNL2E.png"
   }
 ] 
