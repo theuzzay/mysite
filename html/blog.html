@@ -308,6 +308,7 @@ async function loadBlogData() {
     fetchData('../json/ctf.json')
   ]);
   generateBlogCards(certificates, modules, ctf);
+  setupCategoryFilter(); // Kategori filtreleme fonksiyonunu yükle
 }
 
 function generateBlogCards(certificates, modules, ctf) {
@@ -344,6 +345,26 @@ function createBlogCard(item, category, categoryName) {
     <a href="${item.link}" class="blog-card-link" target="_blank">${linkText}</a>
   `;
   return card;
+}
+
+function setupCategoryFilter() {
+  const buttons = document.querySelectorAll('.blog-filter button[data-category]');
+  const cards = document.querySelectorAll('.blog-card');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Aktif butonu güncelle
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.getAttribute('data-category');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
 }
 
 document.addEventListener('DOMContentLoaded', loadBlogData);
