@@ -18,7 +18,7 @@
     "description": "Footprinting (HTB Academy) covers the enumeration of services like FTP, SMB, SQL, MSSQL, IMAP/POP3, DNS, NFS, and SMTP, along with hands-on labs to reinforce each technique.",
     "link": "https://academy.hackthebox.com/achievement/1126987/112",
     "image": "https://academy.hackthebox.com/storage/modules/112/logo.png",
-    "difficulty": "Easy"
+    "difficulty": "Medium"
   },
   {
     "title": " Vulnerability Assessment",
