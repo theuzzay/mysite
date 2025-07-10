@@ -50,25 +50,7 @@
       box-shadow: 0 8px 25px rgba(255,34,34,0.3);
     }
     
-    .blog-search {
-      margin-left: auto;
-      min-width: 250px;
-      padding: 0.8rem 1.2rem;
-      border-radius: 12px;
-      border: 2px solid #ff2222;
-      background: rgba(24,24,27,0.6);
-      color: #fff;
-      font-size: 1rem;
-      font-family: 'Roboto Mono', monospace;
-      outline: none;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(15px);
-    }
-    
-    .blog-search:focus {
-      border-color: #ff4444;
-      box-shadow: 0 0 20px rgba(255,34,34,0.3);
-    }
+
     
     .blog-grid {
       display: grid;
@@ -256,9 +238,9 @@
         <div class="top-menu">
           <div class="top-menu-nav">
             <ul class="menu">
-              <li><a href="/my-blog/index.html">Home</a></li>
-              <li><a href="/my-blog/html/resume.html">About</a></li>
-              <li class="current-menu-item"><a href="/my-blog/html/blog.html">Blog</a></li>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="resume.html">About</a></li>
+              <li class="current-menu-item"><a href="blog.html">Blog</a></li>
             </ul>
           </div>
           <span class="sidebar_btn"><span></span></span>
@@ -279,7 +261,6 @@
                 <button data-category="certificates">Certificates</button>
                 <button data-category="htb-academy">HTB Academy Modules</button>
                 <button data-category="ctf">CTF/Writeup</button>
-                <input type="text" id="blog-search" class="blog-search" placeholder="Search blog..." />
               </div>
               <div class="blog-grid" id="blog-grid">
                 <!-- Blog cards will be dynamically generated here -->
@@ -346,7 +327,36 @@ function createBlogCard(item, category, categoryName) {
   return card;
 }
 
-document.addEventListener('DOMContentLoaded', loadBlogData);
+// Filtreleme fonksiyonu
+function setupFiltering() {
+  const filterButtons = document.querySelectorAll('.blog-filter button');
+  const blogCards = document.querySelectorAll('.blog-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Aktif buton stilini güncelle
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const selectedCategory = button.getAttribute('data-category');
+
+      // Kartları filtrele
+      blogCards.forEach(card => {
+        if (selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadBlogData();
+  // Filtreleme kurulumunu biraz geciktir çünkü kartlar dinamik olarak yükleniyor
+  setTimeout(setupFiltering, 500);
+});
   </script>
 </body>
 </html>
