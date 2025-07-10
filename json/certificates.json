@@ -3,24 +3,28 @@
     "title": "TSE Network and System Penetration Testing Specialist",
     "description": "An official certification issued by the Turkish Standards Institution, validating my expertise in network and system security through penetration testing practices.",
     "link": "https://www.linkedin.com/in/hackyman/overlay/1712048431662/single-media-viewer/?profileId=ACoAAC0XcqUBAPnzn6Noh28KPxqafl7767Lf-0Y",
-    "image": "https://images.seeklogo.com/logo-png/14/1/tse-logo-png_seeklogo-142770.png"
+    "image": "https://images.seeklogo.com/logo-png/14/1/tse-logo-png_seeklogo-142770.png",
+    "difficulty": "Hard"
   },
   {
     "title": " Ethical Hacking Essentials",
     "description": "Ethical Hacking Essentials (EHE) is an entry-level certification by EC-Council that provides fundamental knowledge and skills in penetration testing and ethical hacking.",
     "link": "https://media.licdn.com/dms/image/v2/D4D2DAQHoYXyAf786VA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1715787335648?e=1752714000&v=beta&t=YGELxLfwyXqAsxFNtzrctw42yW7zGr-1z64ZqCUGh9o",
-    "image": "https://eccommonstorage.blob.core.windows.net/codered/certificates/2ceaa9e8-3069-4524-9cfa-6d68256bd7fb.png"
+    "image": "https://eccommonstorage.blob.core.windows.net/codered/certificates/2ceaa9e8-3069-4524-9cfa-6d68256bd7fb.png",
+    "difficulty": "Fundamental"
   },
   {
     "title": "CompTIA Pentest+ (TryHackMe)",
     "description": "CompTIA PenTest+ (TryHackMe) is a hands-on penetration testing course focused on teaching mid-level offensive security skills through practical scenarios and methodologies.",
     "link": "https://www.linkedin.com/in/hackyman/details/certifications/1715787799363/single-media-viewer/?profileId=ACoAAC0XcqUBAPnzn6Noh28KPxqafl7767Lf-0Y",
-    "image": "https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-2VZAGJNL2E.png"
+    "image": "https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-2VZAGJNL2E.png",
+    "difficulty": "Medium"
   },
   {
     "title": "Offensive Pentesting (TryHackme)",
     "description": "Offensive Pentesting (TryHackMe) is a hands-on course focused on Red Team techniques, teaching advanced skills like exploitation and privilege escalation.",
     "link": "https://www.linkedin.com/in/hackyman/details/certifications/1715787717342/single-media-viewer/?profileId=ACoAAC0XcqUBAPnzn6Noh28KPxqafl7767Lf-0Y",
-    "image": "https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-C3SEMOTGQI.png"
+    "image": "https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-C3SEMOTGQI.png",
+    "difficulty": "Hard"
   }
 ] 
