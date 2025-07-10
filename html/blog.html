@@ -201,7 +201,7 @@
       .blog-filter button { font-size: 0.9rem; padding: 0.6rem 1.2rem; }
       .blog-search { min-width: 120px; font-size: 0.9rem; }
       .h-title.glitch-effect { font-size: 1.2rem; }
-      .blog-card-thumb, .blog-card-thumb.placeholder { width: 40px; height: 40px; margin-right: 0.7rem; }
+      .blog-card-thumb, .blog-card-thumb.placeholder { width: 35px; height: 35px; margin-right: 0.7rem; }
       .blog-card { word-break: break-word; }
     }
     
@@ -239,30 +239,31 @@
       margin-bottom: 1rem;
     }
     .blog-card-thumb {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px #ff222255;
-      border: 2px solid #ff2222;
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #ff222255;
+      border: 1px solid #ff2222;
       background: #18181b;
       margin-right: 1rem;
       flex-shrink: 0;
       transition: box-shadow 0.3s;
+      padding: 2px;
     }
     .blog-card-thumb.placeholder {
       background: repeating-linear-gradient(135deg, #222 0 10px, #333 10px 20px);
-      border: 2px dashed #444;
-      width: 60px;
-      height: 60px;
-      border-radius: 10px;
+      border: 1px dashed #444;
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
       margin-right: 1rem;
     }
     @media (max-width: 480px) {
       .blog-card-thumb, .blog-card-thumb.placeholder {
-        width: 40px;
-        height: 40px;
-        margin-right: 0.7rem;
+        width: 30px;
+        height: 30px;
+        margin-right: 0.5rem;
       }
     }
   </style>
