@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Can Bogac – Home</title>
+  <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/42/b5/76/42b57666dbe879a032955b85c5dcdcd5.jpg?w=64&h=64">
+  <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/42/b5/76/42b57666dbe879a032955b85c5dcdcd5.jpg?w=64&h=64">
+  <link rel="shortcut icon" type="image/png" href="https://i.pinimg.com/736x/42/b5/76/42b57666dbe879a032955b85c5dcdcd5.jpg?w=64&h=64">
+  <link rel="apple-touch-icon" href="https://i.pinimg.com/736x/42/b5/76/42b57666dbe879a032955b85c5dcdcd5.jpg?w=128&h=128">
+  <link rel="stylesheet" href="js/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700&display=swap">
+  <link rel="stylesheet" href="ionicons.min.css">
+  <style>
+    body.home {
+      background: #000 !important;
+      color: #fff;
+    }
+    .home-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('https://img.freepik.com/free-photo/mysterious-character-forest_23-2151531939.jpg?semt=ais_items_boosted&w=740') center center no-repeat;
+      background-size: cover;
+      opacity: 0.22;
+      pointer-events: none;
+      user-select: none;
+    }
+    .home-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+      z-index: 1;
+      margin-top: -60px;
+    }
+    .h-title.glitch-effect {
+      font-size: 3.5rem;
+      color: #fff;
+      font-family: 'Roboto Mono', monospace;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.5px;
+      text-align: center;
+      font-weight: 700;
+      text-shadow: none;
+      text-transform: uppercase;
+      opacity: 0.85;
+      animation: shakeY 2.2s infinite alternate;
+      display: block;
+      transition: opacity 0.3s;
+    }
+    @media (max-width: 768px) {
+      .h-title.glitch-effect { font-size: 2.5rem; }
+      .h-subtitle { font-size: 1rem; }
+      .social-icons.big { gap: 1rem; }
+      .social-icons.big a { font-size: 1.3rem; }
+    }
+    @media (max-width: 480px) {
+      .h-title.glitch-effect { font-size: 2rem; }
+      .h-subtitle { font-size: 0.9rem; }
+      .social-icons.big { gap: 0.8rem; }
+      .social-icons.big a { font-size: 1.1rem; }
+    }
+    @keyframes shakeY {
+      0% { transform: translateY(0); }
+      20% { transform: translateY(-2px); }
+      40% { transform: translateY(2px); }
+      60% { transform: translateY(-1px); }
+      80% { transform: translateY(1px); }
+      100% { transform: translateY(0); }
+    }
+    .h-subtitles {
+      margin-bottom: 1.5rem;
+      min-height: 1.5em;
+      text-align: center;
+    }
+    .h-subtitle {
+      color: #fff;
+      font-size: 1.2rem;
+      font-family: 'Roboto Mono', monospace;
+      opacity: 0.7;
+      animation: shakeY 2.2s infinite alternate;
+      display: inline-block;
+      transition: opacity 0.3s;
+      min-width: 220px;
+    }
+    .social-icons.big {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1.2rem;
+    }
+    .social-icons.big a {
+      font-size: 1.5rem;
+      color: #fff;
+      transition: color 0.2s;
+    }
+    .social-icons.big a:hover {
+      color: #f26b38;
+    }
+    .avatar.neon-glow {
+      display: none;
+    }
+  </style>
+</head>
+<body class="home">
+    <div id="particles-js" style="position:fixed; inset:0; z-index:0;"></div>
+    <div class="home-bg"></div>
+  <div class="preloader">
+    <div class="centrize full-width">
+      <div class="vertical-center">
+        <div class="pre-inner">
+          <div class="load typing-load"><p>loading...</p></div>
+          <span class="typed-load"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <header class="header">
+      <div class="head-top" style="justify-content: flex-end;">
+        <div class="top-menu">
+          <div class="top-menu-nav">
+            <ul class="menu">
+              <li class="current-menu-item"><a href="/my-blog/index.html">Home</a></li>
+              <li><a href="/my-blog/html/resume.html">About</a></li>
+              <li><a href="/my-blog/html/blog.html">Blog</a></li>
+            </ul>
+          </div>
+          <span class="sidebar_btn"><span></span></span>
+        </div>
+        <a href="#" class="menu-btn" style="padding:0; background:none; border:none; margin-left:1.5rem;">
+          <img src="https://i.pinimg.com/736x/7c/0e/ee/7c0eeef765f71de93114d1b260d90361.jpg" alt="Avatar" style="width:38px; height:38px; border-radius:50%; box-shadow:0 0 12px #ff2222cc,0 0 0 4px #222a; object-fit:cover; display:block;">
+        </a>
+      </div>
+    </header>
+    <div class="wrapper">
+      <div class="section started background-enabled">
+        <div class="centrize full-width">
+          <div class="vertical-center">
+            <div class="started-content home-content">
+              <h1 class="h-title glitch-effect" data-text="I'M CAN BOGAC">I'M CAN BOGAC</h1>
+              <div class="h-subtitles">
+                <span class="h-subtitle">Offensive Security Consultant</span>
+              </div>
+              <div class="social-icons big">
+                <a href="#" title="GitHub"><span class="ion ion-social-github"></span></a>
+                <a href="#" title="LinkedIn"><span class="ion ion-social-linkedin"></span></a>
+                <a href="#" title="Twitter"><span class="ion ion-social-twitter"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="line top"></div>
+      <div class="line bottom"></div>
+      <div class="line left"></div>
+      <div class="line right"></div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js"></script>
+</body>
+</html> 
