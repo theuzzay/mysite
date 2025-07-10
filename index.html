@@ -24,9 +24,35 @@
       height: 100vh;
       background: url('https://i.pinimg.com/736x/7a/96/7a/7a967a66b6323a97d34ab290cf224839.jpg') center center no-repeat;
       background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       opacity: 0.22;
       pointer-events: none;
       user-select: none;
+    }
+    
+    @media (max-width: 768px) {
+      .home-bg {
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .home-bg {
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+      }
+    }
+    
+    @media (max-width: 360px) {
+      .home-bg {
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+      }
     }
     .home-content {
       display: flex;
