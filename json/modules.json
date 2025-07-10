@@ -4,5 +4,11 @@
     "description": "Penetration Testing Process (HTB Academy) covers the full lifecycle of a penetration test, including target scoping, information gathering, vulnerability analysis, exploitation, persistence, and reporting.",
     "link": "https://academy.hackthebox.com/achievement/1126987/90",
     "image": "https://academy.hackthebox.com/storage/modules/90/logo.png"
+  },
+  {
+    "title": "Network Enumeration with Nmap",
+    "description": "Network Enumeration with Nmap (HTB Academy) focuses on discovering target systems, identifying services, and bypassing security measures using Nmap.",
+    "link": "https://academy.hackthebox.com/achievement/1126987/19",
+    "image": "https://academy.hackthebox.com/storage/modules/19/logo.png"
   }
 ] 
