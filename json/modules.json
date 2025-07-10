@@ -40,5 +40,12 @@
     "link": "https://academy.hackthebox.com/achievement/1126987/115",
     "image": "https://academy.hackthebox.com/storage/modules/115/logo.png",
     "difficulty": "Medium"
+  },
+  {
+    "title": " Using the Metasploit Framework",
+    "description": "Using the Metasploit Framework (HTB Academy) teaches in-depth usage of Metasploit, including module types, setting targets and payloads, session pivoting, Meterpreter and Kiwi usage, and developing custom payloads and modules",
+    "link": "https://academy.hackthebox.com/achievement/1126987/115",
+    "image": "https://academy.hackthebox.com/storage/modules/115/logo.png",
+    "difficulty": "Easy"
   }
 ] 
