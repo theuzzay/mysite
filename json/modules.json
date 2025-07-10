@@ -22,5 +22,11 @@
     "description": "Vulnerability Assessment (HTB Academy) covers security assessments, vulnerability scoring and reporting using tools like Nessus and OpenVAS through hands-on exercises.",
     "link": "https://academy.hackthebox.com/achievement/1126987/108",
     "image": "https://academy.hackthebox.com/storage/modules/108/logo.png"
+  },
+  {
+    "title": "File Transfers",
+    "description": "File Transfers (HTB Academy) is a hands-on module covering various file transfer methods and the risks of detection during transfers.",
+    "link": "https://academy.hackthebox.com/achievement/1126987/24",
+    "image": "https://academy.hackthebox.com/storage/modules/24/logo.png"
   }
 ] 
