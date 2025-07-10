@@ -22,7 +22,7 @@
       z-index: 0;
       width: 100vw;
       height: 100vh;
-      background: url('https://i.pinimg.com/736x/7a/96/7a/7a967a66b6323a97d34ab290cf224839.jpg') center center no-repeat;
+      background: url('https://i.pinimg.com/736x/2e/aa/84/2eaa843572893cd02157e3920686be30.jpg') center center no-repeat;
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -36,6 +36,7 @@
         background-size: cover;
         background-position: center;
         background-attachment: scroll;
+        min-height: 100vh;
       }
     }
     
@@ -44,6 +45,8 @@
         background-size: cover;
         background-position: center;
         background-attachment: scroll;
+        min-height: 100vh;
+        width: 100%;
       }
     }
     
@@ -52,6 +55,16 @@
         background-size: cover;
         background-position: center;
         background-attachment: scroll;
+        min-height: 100vh;
+        width: 100%;
+      }
+    }
+    
+    @media (orientation: landscape) and (max-height: 500px) {
+      .home-bg {
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
       }
     }
     .home-content {
