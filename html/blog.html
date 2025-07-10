@@ -293,11 +293,9 @@
             <div class="started-content blog-container">
               <h1 class="h-title glitch-effect" data-text="Blog"><span>Blog</span></h1>
               <div class="blog-filter">
-                <!-- <button class="active" data-category="all">All</button> -->
-                <button data-category="certificates">Certificates</button>
+                <button data-category="certificates" class="active">Certificates</button>
                 <button data-category="htb-academy">HTB Academy Modules</button>
                 <button data-category="ctf">CTF/Writeup</button>
-                <input type="text" id="blog-search" class="blog-search" placeholder="Search blog..." />
               </div>
               <div class="blog-grid" id="blog-grid">
                 <!-- Blog cards will be dynamically generated here -->
@@ -326,7 +324,9 @@ async function loadBlogData() {
     fetchData('../json/ctf.json')
   ]);
   generateBlogCards(certificates, modules, ctf);
-  setupCategoryFilter(); // Kategori filtreleme fonksiyonunu yükle
+  setupCategoryFilter();
+  // Sayfa ilk açıldığında sadece Certificates göster
+  filterBlogCards('certificates');
 }
 
 function generateBlogCards(certificates, modules, ctf) {
@@ -380,22 +380,27 @@ function createBlogCard(item, category, categoryName) {
   return card;
 }
 
-function setupCategoryFilter() {
+function filterBlogCards(category) {
   const buttons = document.querySelectorAll('.blog-filter button[data-category]');
   const cards = document.querySelectorAll('.blog-card');
+  buttons.forEach(b => b.classList.remove('active'));
+  const btn = document.querySelector('.blog-filter button[data-category="' + category + '"]');
+  if(btn) btn.classList.add('active');
+  cards.forEach(card => {
+    if (card.getAttribute('data-category') === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function setupCategoryFilter() {
+  const buttons = document.querySelectorAll('.blog-filter button[data-category]');
   buttons.forEach(btn => {
     btn.addEventListener('click', function() {
-      // Aktif butonu güncelle
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
       const cat = btn.getAttribute('data-category');
-      cards.forEach(card => {
-        if (cat === 'all' || card.getAttribute('data-category') === cat) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      filterBlogCards(cat);
     });
   });
 }
