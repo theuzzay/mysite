@@ -333,14 +333,24 @@ function generateBlogCards(certificates, modules, ctf) {
   const blogGrid = document.getElementById('blog-grid');
   blogGrid.innerHTML = '';
 
+  // Sertifikalar ve CTF'ler olduğu gibi ekleniyor
   certificates.forEach(item => {
     const card = createBlogCard(item, 'certificates', 'Certificates');
     blogGrid.appendChild(card);
+  });
+
+  // Modülleri difficulty sırasına göre sırala
+  const diffOrder = ['hard', 'medium', 'easy', 'fundamental'];
+  modules.sort((a, b) => {
+    const aDiff = a.difficulty ? a.difficulty.trim().toLowerCase() : 'fundamental';
+    const bDiff = b.difficulty ? b.difficulty.trim().toLowerCase() : 'fundamental';
+    return diffOrder.indexOf(aDiff) - diffOrder.indexOf(bDiff);
   });
   modules.forEach(item => {
     const card = createBlogCard(item, 'htb-academy', 'HTB Academy Modules');
     blogGrid.appendChild(card);
   });
+
   ctf.forEach(item => {
     const card = createBlogCard(item, 'ctf', 'CTF/Writeup');
     blogGrid.appendChild(card);
