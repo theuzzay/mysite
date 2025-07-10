@@ -439,16 +439,30 @@ body {
   .timeline-icon { left: -1.3rem; width: 1.5rem; height: 1.5rem; font-size: 1rem; }
   
   /* Mobil için tam ekran düzenlemeleri */
-  body { height: 100vh; overflow: hidden; }
-  .container { height: 100vh; overflow: hidden; }
-  .section.started { height: 100vh; padding: 0; }
-  .centrize.full-width { height: 100vh; }
-  .vertical-center { height: 100vh; }
-  
-  /* Mobil menü düzenlemeleri */
-  .head-top { padding: 0 1rem; }
-  .top-menu-nav .menu { gap: 1rem; }
-  .menu a { font-size: 0.9rem; padding: 0.4rem 0.8rem; }
+  body, .container, .section.started, .centrize.full-width, .vertical-center {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .container {
+    padding-bottom: 2rem;
+  }
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    max-height: unset;
+    padding-bottom: 2rem;
+  }
+  .blog-card {
+    padding: 1.1rem;
+  }
+  .blog-filter {
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .blog-filter button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
 }
 
 @media (max-width: 700px) {
@@ -486,5 +500,31 @@ body {
     min-width: 120px;
     font-size: 0.98rem;
     padding: 0.5rem 0.7rem;
+  }
+  .blog-card {
+    padding: 0.7rem;
+  }
+  .blog-card-title {
+    font-size: 1rem;
+  }
+  .blog-card-description {
+    font-size: 0.9rem;
+  }
+  .blog-filter {
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  .blog-filter button {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+  .blog-card-thumb, .blog-card-thumb.placeholder {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.5rem;
+  }
+  .blog-card[data-category="certificates"] .blog-card-thumb {
+    width: 90px;
+    height: 40px;
   }
 }
