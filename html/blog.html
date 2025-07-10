@@ -200,6 +200,20 @@
       .blog-card { word-break: break-word; }
     }
     .blog-grid { overflow-x: auto; }
+    .difficulty-badge {
+      display: inline-block;
+      padding: 0.18em 0.7em;
+      border-radius: 8px;
+      font-size: 0.85em;
+      font-weight: 600;
+      margin-left: 8px;
+      margin-bottom: 2px;
+      vertical-align: middle;
+      letter-spacing: 0.5px;
+    }
+    .difficulty-badge.easy { background: #1ed760; color: #fff; }
+    .difficulty-badge.medium { background: #ff9800; color: #fff; }
+    .difficulty-badge.fundamental { background: #2196f3; color: #fff; }
   </style>
   <style>
     .blog-card-thumb-wrap {
@@ -340,9 +354,14 @@ function createBlogCard(item, category, categoryName) {
   const linkText = category === 'certificates' ? 'View Certificate' : 
                   category === 'htb-academy' ? 'View Module' : 'Read Article';
   let imgUrl = item.image || '';
+  let badgeHtml = '';
+  if(category === 'htb-academy' && item.difficulty) {
+    const diff = item.difficulty.trim().toLowerCase();
+    badgeHtml = `<span class="difficulty-badge ${diff}">${item.difficulty}</span>`;
+  }
   const imgHtml = imgUrl ? `<img class="blog-card-thumb" src="${imgUrl}" alt="${item.title} image" loading="lazy">` : `<div class="blog-card-thumb placeholder"></div>`;
   card.innerHTML = `
-    <div class="blog-card-thumb-wrap">${imgHtml}</div>
+    <div class="blog-card-thumb-wrap">${imgHtml} ${badgeHtml}</div>
     <div class="blog-card-category">${categoryName}</div>
     <h3 class="blog-card-title">${item.title}</h3>
     <p class="blog-card-description">${item.description}</p>
