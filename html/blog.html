@@ -23,7 +23,7 @@
       flex-wrap: wrap;
       gap: 1rem;
       margin-bottom: 2.5rem;
-      justify-content: flex-start; /* Sola hizala */
+      justify-content: center;
       align-items: center;
     }
     
@@ -199,27 +199,7 @@
       .blog-card-thumb, .blog-card-thumb.placeholder { width: 32px; height: 32px; margin-right: 0.5rem; }
       .blog-card { word-break: break-word; }
     }
-    .blog-grid {
-      overflow-x: auto;
-      scrollbar-width: none; /* Firefox */
-    }
-    .blog-grid::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
-    }
-    .difficulty-badge {
-      display: inline-block;
-      padding: 0.18em 0.7em;
-      border-radius: 8px;
-      font-size: 0.85em;
-      font-weight: 600;
-      margin-left: 8px;
-      margin-bottom: 2px;
-      vertical-align: middle;
-      letter-spacing: 0.5px;
-    }
-    .difficulty-badge.easy { background: #1ed760; color: #fff; }
-    .difficulty-badge.medium { background: #ff9800; color: #fff; }
-    .difficulty-badge.fundamental { background: #2196f3; color: #fff; }
+    .blog-grid { overflow-x: auto; }
   </style>
   <style>
     .blog-card-thumb-wrap {
@@ -230,9 +210,9 @@
       margin-bottom: 1rem;
     }
     .blog-card-thumb {
-      width: 100px;
+      width: 60px;
       height: 60px;
-      object-fit: contain;
+      object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 2px 12px #ff222255;
       border: 2px solid #ff2222;
@@ -249,15 +229,11 @@
       border-radius: 10px;
       margin-right: 1rem;
     }
-    .blog-card[data-category="certificates"] .blog-card-thumb {
-      width: 180px;
-      height: 70px;
-      object-fit: cover;
-    }
     @media (max-width: 480px) {
-      .blog-card[data-category="certificates"] .blog-card-thumb {
-        width: 120px;
-        height: 50px;
+      .blog-card-thumb, .blog-card-thumb.placeholder {
+        width: 40px;
+        height: 40px;
+        margin-right: 0.7rem;
       }
     }
   </style>
@@ -280,9 +256,9 @@
         <div class="top-menu">
           <div class="top-menu-nav">
             <ul class="menu">
-              <li><a href="../index.html">Home</a></li>
-              <li><a href="resume.html">About</a></li>
-              <li class="current-menu-item"><a href="blog.html">Blog</a></li>
+              <li><a href="/my-blog/index.html">Home</a></li>
+              <li><a href="/my-blog/html/resume.html">About</a></li>
+              <li class="current-menu-item"><a href="/my-blog/html/blog.html">Blog</a></li>
             </ul>
           </div>
           <span class="sidebar_btn"><span></span></span>
@@ -299,9 +275,11 @@
             <div class="started-content blog-container">
               <h1 class="h-title glitch-effect" data-text="Blog"><span>Blog</span></h1>
               <div class="blog-filter">
-                <button data-category="certificates" class="active">Certificates</button>
+                <button class="active" data-category="all">All</button>
+                <button data-category="certificates">Certificates</button>
                 <button data-category="htb-academy">HTB Academy Modules</button>
                 <button data-category="ctf">CTF/Writeup</button>
+                <input type="text" id="blog-search" class="blog-search" placeholder="Search blog..." />
               </div>
               <div class="blog-grid" id="blog-grid">
                 <!-- Blog cards will be dynamically generated here -->
@@ -330,33 +308,20 @@ async function loadBlogData() {
     fetchData('../json/ctf.json')
   ]);
   generateBlogCards(certificates, modules, ctf);
-  setupCategoryFilter();
-  // Sayfa ilk açıldığında sadece Certificates göster
-  filterBlogCards('certificates');
 }
 
 function generateBlogCards(certificates, modules, ctf) {
   const blogGrid = document.getElementById('blog-grid');
   blogGrid.innerHTML = '';
 
-  // Sertifikalar ve CTF'ler olduğu gibi ekleniyor
   certificates.forEach(item => {
     const card = createBlogCard(item, 'certificates', 'Certificates');
     blogGrid.appendChild(card);
-  });
-
-  // Modülleri difficulty sırasına göre sırala
-  const diffOrder = ['hard', 'medium', 'easy', 'fundamental'];
-  modules.sort((a, b) => {
-    const aDiff = a.difficulty ? a.difficulty.trim().toLowerCase() : 'fundamental';
-    const bDiff = b.difficulty ? b.difficulty.trim().toLowerCase() : 'fundamental';
-    return diffOrder.indexOf(aDiff) - diffOrder.indexOf(bDiff);
   });
   modules.forEach(item => {
     const card = createBlogCard(item, 'htb-academy', 'HTB Academy Modules');
     blogGrid.appendChild(card);
   });
-
   ctf.forEach(item => {
     const card = createBlogCard(item, 'ctf', 'CTF/Writeup');
     blogGrid.appendChild(card);
@@ -370,45 +335,15 @@ function createBlogCard(item, category, categoryName) {
   const linkText = category === 'certificates' ? 'View Certificate' : 
                   category === 'htb-academy' ? 'View Module' : 'Read Article';
   let imgUrl = item.image || '';
-  let badgeHtml = '';
-  if(category === 'htb-academy' && item.difficulty) {
-    const diff = item.difficulty.trim().toLowerCase();
-    badgeHtml = `<span class="difficulty-badge ${diff}">${item.difficulty}</span>`;
-  }
   const imgHtml = imgUrl ? `<img class="blog-card-thumb" src="${imgUrl}" alt="${item.title} image" loading="lazy">` : `<div class="blog-card-thumb placeholder"></div>`;
   card.innerHTML = `
-    <div class="blog-card-thumb-wrap">${imgHtml} ${badgeHtml}</div>
+    <div class="blog-card-thumb-wrap">${imgHtml}</div>
     <div class="blog-card-category">${categoryName}</div>
     <h3 class="blog-card-title">${item.title}</h3>
     <p class="blog-card-description">${item.description}</p>
     <a href="${item.link}" class="blog-card-link" target="_blank">${linkText}</a>
   `;
   return card;
-}
-
-function filterBlogCards(category) {
-  const buttons = document.querySelectorAll('.blog-filter button[data-category]');
-  const cards = document.querySelectorAll('.blog-card');
-  buttons.forEach(b => b.classList.remove('active'));
-  const btn = document.querySelector('.blog-filter button[data-category="' + category + '"]');
-  if(btn) btn.classList.add('active');
-  cards.forEach(card => {
-    if (card.getAttribute('data-category') === category) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-}
-
-function setupCategoryFilter() {
-  const buttons = document.querySelectorAll('.blog-filter button[data-category]');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      const cat = btn.getAttribute('data-category');
-      filterBlogCards(cat);
-    });
-  });
 }
 
 document.addEventListener('DOMContentLoaded', loadBlogData);
