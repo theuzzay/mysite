@@ -492,23 +492,26 @@ body {
     padding: 0.1rem 0;
   }
   .head-top {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 0.2rem;
-  }
-  .top-menu {
-    flex-direction: column;
+    justify-content: flex-end;
     gap: 0.2rem;
     width: 100%;
+  }
+  .top-menu {
+    flex-direction: row;
+    gap: 0.2rem;
+    width: auto;
     align-items: center;
+    justify-content: flex-end;
   }
   .top-menu-nav .menu {
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     gap: 0.5rem;
-    width: 100%;
-    margin: 0 auto;
+    width: auto;
+    margin: 0 0 0 auto;
     padding: 0;
   }
   .menu li {
@@ -518,21 +521,30 @@ body {
     font-size: 0.85rem;
     padding: 0.2rem 0.5rem;
   }
-  /* Avatar ve isim ortalansın */
-  .profile, .avatar-wrapper, .avatar.neon-glow, .bio, .h-title.glitch-effect {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0 auto !important;
-    text-align: center !important;
+  /* Avatar sağa hizalansın */
+  .menu-btn, .avatar.neon-glow {
+    margin-left: 0.5rem !important;
+    margin-right: 0 !important;
+    align-self: flex-end !important;
+    justify-self: flex-end !important;
   }
+  /* Sadece başlık ortada kalsın */
   .h-title.glitch-effect {
+    display: flex !important;
     width: 100%;
     text-align: center;
     justify-content: center;
     align-items: center;
     margin: 0.5rem 0 1.2rem 0;
+  }
+  /* Avatar ve isim dışında kalan profile, bio, avatar-wrapper ortalanmasın */
+  .profile, .avatar-wrapper, .bio {
+    align-items: unset !important;
+    justify-content: unset !important;
+    margin: unset !important;
+    text-align: unset !important;
+    display: unset !important;
+    flex-direction: unset !important;
   }
 }
 
