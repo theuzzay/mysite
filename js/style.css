@@ -493,29 +493,47 @@ body {
   }
   .head-top {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.2rem;
   }
   .top-menu {
     flex-direction: column;
     gap: 0.2rem;
+    width: 100%;
+    align-items: center;
   }
   .top-menu-nav .menu {
-    flex-direction: column;
-    gap: 0.2rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .menu li {
+    margin: 0;
   }
   .menu a {
     font-size: 0.85rem;
     padding: 0.2rem 0.5rem;
   }
-  .h-title.glitch-effect { font-size: 1.5rem; }
-  .resume-card { padding: 1rem 0.2rem; }
-  .skills-grid { grid-template-columns: 1fr; }
-  
-  /* Küçük mobil cihazlar için */
-  .h-title.glitch-effect { font-size: 1.3rem; letter-spacing: 1px; }
-  .social-icons.big { gap: 0.8rem; }
-  .social-icons.big a { font-size: 1.2rem; }
+  /* Avatar ve isim ortalansın */
+  .profile, .avatar-wrapper, .avatar.neon-glow, .bio, .h-title.glitch-effect {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .h-title.glitch-effect {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0 1.2rem 0;
+  }
 }
 
 #particles-js {
