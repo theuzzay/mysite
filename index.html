@@ -18,115 +18,39 @@
     }
     .home-bg {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      inset: 0;
       z-index: 0;
       width: 100vw;
       height: 100vh;
-      background: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/5b68fa54380799.59596a6ad63c9.jpg') center center no-repeat;
-      background-size: 100% 100%;
+      background: url('https://img.freepik.com/free-photo/mysterious-character-forest_23-2151531939.jpg?semt=ais_items_boosted&w=740') center center no-repeat;
+      background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      background-repeat: no-repeat;
       opacity: 0.22;
       pointer-events: none;
       user-select: none;
-      object-fit: cover;
-      min-width: 100vw;
-      min-height: 100vh;
-      max-width: 100vw;
-      max-height: 100vh;
     }
     
     @media (max-width: 768px) {
-      .home-bg {
-        background-size: 100% 100%;
-        background-position: center;
-        background-attachment: scroll;
-        min-height: 100vh;
-        width: 100vw;
-        height: 100vh;
-        min-width: 100vw;
-        max-width: 100vw;
-        max-height: 100vh;
-      }
+      .h-title.glitch-effect { font-size: 2.5rem; }
+      .h-subtitle { font-size: 1rem; }
+      .social-icons.big { gap: 1rem; }
+      .social-icons.big a { font-size: 1.3rem; }
+      .home-content { margin-top: -40px; }
     }
-    
     @media (max-width: 480px) {
-      .home-bg {
-        background-size: 100% 100%;
-        background-position: center;
-        background-attachment: scroll;
-        min-height: 100vh;
-        width: 100vw;
-        height: 100vh;
-        min-width: 100vw;
-        max-width: 100vw;
-        max-height: 100vh;
-      }
+      .h-title.glitch-effect { font-size: 1.8rem; }
+      .h-subtitle { font-size: 0.9rem; min-width: 180px; }
+      .social-icons.big { gap: 0.8rem; }
+      .social-icons.big a { font-size: 1.1rem; }
+      .home-content { margin-top: -30px; }
     }
-    
     @media (max-width: 360px) {
-      .home-bg {
-        background-size: 100% 100%;
-        background-position: center;
-        background-attachment: scroll;
-        min-height: 100vh;
-        width: 100vw;
-        height: 100vh;
-        min-width: 100vw;
-        max-width: 100vw;
-        max-height: 100vh;
-      }
-    }
-    
-    @media (orientation: landscape) and (max-height: 500px) {
-      .home-bg {
-        background-size: 100% 100%;
-        background-position: center;
-        min-height: 100vh;
-        width: 100vw;
-        height: 100vh;
-        min-width: 100vw;
-        max-width: 100vw;
-        max-height: 100vh;
-      }
-    }
-    
-    @media (orientation: portrait) {
-      .home-bg {
-        background-size: 100% 100%;
-        background-position: center;
-        width: 100vw;
-        height: 100vh;
-        min-width: 100vw;
-        max-width: 100vw;
-        min-height: 100vh;
-        max-height: 100vh;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
-    }
-    
-    @media (orientation: landscape) {
-      .home-bg {
-        background-size: 100% 100%;
-        background-position: center;
-        width: 100vw;
-        height: 100vh;
-        min-width: 100vw;
-        max-width: 100vw;
-        min-height: 100vh;
-        max-height: 100vh;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
+      .h-title.glitch-effect { font-size: 1.5rem; }
+      .h-subtitle { font-size: 0.8rem; min-width: 160px; }
+      .social-icons.big { gap: 0.6rem; }
+      .social-icons.big a { font-size: 1rem; }
+      .home-content { margin-top: -20px; }
     }
     .home-content {
       display: flex;
