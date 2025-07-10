@@ -23,7 +23,7 @@
       flex-wrap: wrap;
       gap: 1rem;
       margin-bottom: 2.5rem;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
     }
     
@@ -298,8 +298,7 @@
             <div class="started-content blog-container">
               <h1 class="h-title glitch-effect" data-text="Blog"><span>Blog</span></h1>
               <div class="blog-filter">
-                <button class="active" data-category="all">All</button>
-                <button data-category="certificates">Certificates</button>
+                <button class="active" data-category="certificates">Certificates</button>
                 <button data-category="htb-academy">HTB Academy Modules</button>
                 <button data-category="ctf">CTF/Writeup</button>
               </div>
@@ -336,16 +335,29 @@ function generateBlogCards(certificates, modules, ctf) {
   const blogGrid = document.getElementById('blog-grid');
   blogGrid.innerHTML = '';
 
+  // Modülleri difficulty'ye göre sırala (Hard → Fundamental)
+  const difficultyOrder = { 'Hard': 0, 'Medium': 1, 'Easy': 2, 'Fundamental': 3 };
+  const sortedModules = modules.sort((a, b) => {
+    const aOrder = difficultyOrder[a.difficulty] || 4;
+    const bOrder = difficultyOrder[b.difficulty] || 4;
+    return aOrder - bOrder;
+  });
+
+  // Sadece certificates göster (sayfa açıldığında)
   certificates.forEach(item => {
     const card = createBlogCard(item, 'certificates', 'Certificates');
     blogGrid.appendChild(card);
   });
-  modules.forEach(item => {
+  
+  // Diğer kategorileri gizle
+  sortedModules.forEach(item => {
     const card = createBlogCard(item, 'htb-academy', 'HTB Academy Modules');
+    card.style.display = 'none';
     blogGrid.appendChild(card);
   });
   ctf.forEach(item => {
     const card = createBlogCard(item, 'ctf', 'CTF/Writeup');
+    card.style.display = 'none';
     blogGrid.appendChild(card);
   });
 }
@@ -390,7 +402,7 @@ function setupFiltering() {
 
       // Kartları filtrele
       blogCards.forEach(card => {
-        if (selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory) {
+        if (card.getAttribute('data-category') === selectedCategory) {
           card.style.display = 'block';
         } else {
           card.style.display = 'none';
