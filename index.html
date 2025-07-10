@@ -58,12 +58,21 @@
       .h-subtitle { font-size: 1rem; }
       .social-icons.big { gap: 1rem; }
       .social-icons.big a { font-size: 1.3rem; }
+      .home-content { margin-top: -40px; }
     }
     @media (max-width: 480px) {
-      .h-title.glitch-effect { font-size: 2rem; }
-      .h-subtitle { font-size: 0.9rem; }
+      .h-title.glitch-effect { font-size: 1.8rem; }
+      .h-subtitle { font-size: 0.9rem; min-width: 180px; }
       .social-icons.big { gap: 0.8rem; }
       .social-icons.big a { font-size: 1.1rem; }
+      .home-content { margin-top: -30px; }
+    }
+    @media (max-width: 360px) {
+      .h-title.glitch-effect { font-size: 1.5rem; }
+      .h-subtitle { font-size: 0.8rem; min-width: 160px; }
+      .social-icons.big { gap: 0.6rem; }
+      .social-icons.big a { font-size: 1rem; }
+      .home-content { margin-top: -20px; }
     }
     @keyframes shakeY {
       0% { transform: translateY(0); }
