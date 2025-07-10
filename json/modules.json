@@ -47,5 +47,26 @@
     "link": "https://academy.hackthebox.com/achievement/1126987/115",
     "image": "https://academy.hackthebox.com/storage/modules/115/logo.png",
     "difficulty": "Easy"
+  },
+  {
+    "title": "Password Attacks",
+    "description": "Password Attacks (HTB Academy) covers password cracking techniques, hash cracking tools (John, Hashcat), custom wordlist creation, remote password attacks, credential extraction from Windows/Linux systems and network traffic, and lateral movement techniques like Pass-the-Hash, Pass-the-Ticket, and Pass-the-Certificate.",
+    "link": "https://academy.hackthebox.com/achievement/1126987/147",
+    "image": "https://academy.hackthebox.com/storage/modules/147/logo.png",
+    "difficulty": "Medium"
+  },
+  {
+    "title": "Attacking Common Services",
+    "description": "Attacking Common Services (HTB Academy) focuses on identifying, analyzing, and exploiting commonly exposed services such as FTP, SSH, SMB, RDP, and Telnet. It covers misconfiguration discovery, service-specific vulnerabilities, and practical exploitation techniques including password-based attacks.",
+    "link": "https://academy.hackthebox.com/achievement/1126987/116",
+    "image": "https://academy.hackthebox.com/storage/modules/116/logo.png",
+    "difficulty": "Medium"
+  },
+  {
+    "title": "Pivoting, Tunneling, and Port Forwarding",
+    "description": "Pivoting, Tunneling, and Port Forwarding (HTB Academy) covers techniques for accessing internal networks through compromised hosts, including pivoting, port forwarding, and tunneling. The module includes hands-on labs using tools like SSH, SOCKS proxies, Chisel, and Metasploit to establish pivot infrastructure.",
+    "link": "https://academy.hackthebox.com/achievement/1126987/158",
+    "image": "https://academy.hackthebox.com/storage/modules/158/logo.png",
+    "difficulty": "Medium"
   }
 ] 
