@@ -33,5 +33,12 @@
     "link": "https://academy.hackthebox.com/achievement/1126987/24",
     "image": "https://academy.hackthebox.com/storage/modules/24/logo.png",
     "difficulty": "Easy"
+  },
+  {
+    "title": "Shells & Payloads",
+    "description": "Shells & Payloads (HTB Academy) covers crafting payloads tailored to target architecture, understanding bind vs reverse shells, experimenting with various shell types (bash, cmd, PowerShell, web shells), and using Metasploit for exploitation through hands-on labs.",
+    "link": "https://academy.hackthebox.com/achievement/1126987/115",
+    "image": "https://academy.hackthebox.com/storage/modules/115/logo.png",
+    "difficulty": "Medium"
   }
 ] 
