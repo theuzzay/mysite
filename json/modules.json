@@ -68,5 +68,33 @@
     "link": "https://academy.hackthebox.com/achievement/1126987/158",
     "image": "https://academy.hackthebox.com/storage/modules/158/logo.png",
     "difficulty": "Medium"
+  },
+  {
+    "title": "Active Directory Enumeration & Attacks",
+    "description": "Active Directory Enumeration & Attacks (HTB Academy) focuses on enumerating and attacking Active Directory in both modern and legacy enterprise environments. It covers BloodHound and Kerbrute usage, SMB Null sessions, password spraying, ACL abuse, domain trust exploitation, Kerberoasting, and privilege escalation. The module also includes native tool abuse and AD hardening techniques.",
+    "link": "https://academy.hackthebox.com/achievement/1126987/143",
+    "image": "https://academy.hackthebox.com/storage/modules/143/logo.png",
+    "difficulty": "Medium"
+  },
+  {
+    "title": "Using Web Proxies",
+    "description": "Using Web Proxies (HTB Academy) teaches how to effectively use tools like Burp Suite and ZAP to intercept, analyze, and manipulate web traffic, discover hidden features, perform fuzzing, and identify vulnerabilities through passive and active scanning. The module also includes proxying traffic from other tools and extending functionality via plugins.",
+    "link": "https://academy.hackthebox.com/achievement/1126987/110",
+    "image": "https://academy.hackthebox.com/storage/modules/110/logo.png",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "Attacking Web Applications with Ffuf",
+    "description": "Attacking Web Applications with Ffuf (HTB Academy) focuses on discovering hidden directories, pages, virtual hosts, and parameters within web applications. It covers using Ffuf for directory brute-forcing, vhost enumeration, PHP parameter fuzzing, and testing parameter values through hands-on practice.",
+    "link": "https://academy.hackthebox.com/achievement/1126987/54",
+    "image": "https://academy.hackthebox.com/storage/modules/54/logo.png",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "Login Brute Forcing",
+    "description": "Login Brute Forcing (HTB Academy) covers systematic brute-force attacks against HTTP authentication, web login forms, and remote services like SSH and FTP. Through hands-on exercises using tools like Hydra and Medusa, it explores dictionary and hybrid attacks, default credentials, custom wordlist creation, and the exploitation of weak authentication mechanisms.",
+    "link": "https://academy.hackthebox.com/achievement/1126987/57",
+    "image": "https://academy.hackthebox.com/storage/modules/57/logo.png",
+    "difficulty": "Easy"
   }
 ] 
