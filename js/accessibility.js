@@ -42,27 +42,21 @@ class AccessibilityManager {
 
   setupScreenReaderSupport() {
     // Add ARIA labels and roles
+    // Accordion başlıklarını button'a çevirmeden sadece ARIA ekle
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     accordionHeaders.forEach((header, index) => {
+      header.setAttribute('tabindex', '0');
+      header.setAttribute('role', 'button');
+      header.setAttribute('aria-expanded', 'false');
+      header.setAttribute('aria-controls', `accordion-content-${index}`);
+      header.id = `accordion-header-${index}`;
       const content = header.nextElementSibling;
-      const button = document.createElement('button');
-      button.setAttribute('aria-expanded', 'false');
-      button.setAttribute('aria-controls', `accordion-content-${index}`);
-      button.setAttribute('role', 'button');
-      button.setAttribute('tabindex', '0');
-      
-      // Move header content to button
-      button.innerHTML = header.innerHTML;
-      header.innerHTML = '';
-      header.appendChild(button);
-      
       if (content) {
         content.setAttribute('id', `accordion-content-${index}`);
         content.setAttribute('aria-labelledby', `accordion-header-${index}`);
         content.setAttribute('role', 'region');
       }
     });
-
     // Add skip links
     this.addSkipLinks();
   }
