@@ -1,16 +1,12 @@
 // Accessibility Features
 class AccessibilityManager {
   constructor() {
-    this.isHighContrast = false;
-    this.fontSize = 100; // percentage
     this.init();
   }
 
   init() {
     this.setupKeyboardNavigation();
     this.setupScreenReaderSupport();
-    this.setupHighContrastMode();
-    this.setupFontSizeControl();
     this.setupFocusIndicators();
     this.setupSkipLinks();
   }
@@ -71,30 +67,6 @@ class AccessibilityManager {
     this.addSkipLinks();
   }
 
-  setupHighContrastMode() {
-    // Create high contrast toggle
-    const contrastToggle = document.createElement('button');
-    contrastToggle.innerHTML = '🌙';
-    contrastToggle.setAttribute('aria-label', 'Toggle high contrast mode');
-    contrastToggle.setAttribute('title', 'High Contrast Mode');
-    contrastToggle.className = 'accessibility-toggle contrast-toggle';
-    contrastToggle.addEventListener('click', () => this.toggleHighContrast());
-    
-    document.body.appendChild(contrastToggle);
-  }
-
-  setupFontSizeControl() {
-    // Create font size controls
-    const fontSizeControls = document.createElement('div');
-    fontSizeControls.className = 'font-size-controls';
-    fontSizeControls.innerHTML = `
-      <button class="accessibility-toggle" aria-label="Decrease font size" onclick="accessibilityManager.changeFontSize(-10)">A-</button>
-      <button class="accessibility-toggle" aria-label="Increase font size" onclick="accessibilityManager.changeFontSize(10)">A+</button>
-    `;
-    
-    document.body.appendChild(fontSizeControls);
-  }
-
   setupFocusIndicators() {
     // Add focus indicators for keyboard navigation
     const style = document.createElement('style');
@@ -102,56 +74,6 @@ class AccessibilityManager {
       .keyboard-navigation *:focus {
         outline: 3px solid #ff2222 !important;
         outline-offset: 2px !important;
-      }
-      
-      .accessibility-toggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-        background: rgba(24,24,27,0.9);
-        border: 2px solid #ff2222;
-        color: #fff;
-        padding: 10px;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 18px;
-        backdrop-filter: blur(10px);
-        transition: all 0.3s ease;
-      }
-      
-      .accessibility-toggle:hover {
-        background: #ff2222;
-        transform: scale(1.1);
-      }
-      
-      .font-size-controls {
-        position: fixed;
-        top: 80px;
-        right: 20px;
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      
-      .font-size-controls .accessibility-toggle {
-        position: static;
-        border-radius: 8px;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-      }
-      
-      .high-contrast {
-        filter: contrast(150%) brightness(120%);
-      }
-      
-      .high-contrast * {
-        border-color: #fff !important;
       }
       
       .skip-link {
@@ -190,28 +112,7 @@ class AccessibilityManager {
     });
   }
 
-  toggleHighContrast() {
-    this.isHighContrast = !this.isHighContrast;
-    document.body.classList.toggle('high-contrast', this.isHighContrast);
-    
-    // Save preference
-    localStorage.setItem('highContrast', this.isHighContrast);
-    
-    // Update toggle button
-    const toggle = document.querySelector('.contrast-toggle');
-    if (toggle) {
-      toggle.innerHTML = this.isHighContrast ? '☀️' : '🌙';
-      toggle.setAttribute('aria-label', this.isHighContrast ? 'Disable high contrast mode' : 'Enable high contrast mode');
-    }
-  }
 
-  changeFontSize(delta) {
-    this.fontSize = Math.max(80, Math.min(200, this.fontSize + delta));
-    document.documentElement.style.fontSize = `${this.fontSize}%`;
-    
-    // Save preference
-    localStorage.setItem('fontSize', this.fontSize);
-  }
 
   closeAllModals() {
     // Close any open modals or menus
@@ -235,26 +136,13 @@ class AccessibilityManager {
     }
   }
 
-  // Load saved preferences
-  loadPreferences() {
-    const savedContrast = localStorage.getItem('highContrast');
-    if (savedContrast === 'true') {
-      this.toggleHighContrast();
-    }
-    
-    const savedFontSize = localStorage.getItem('fontSize');
-    if (savedFontSize) {
-      this.fontSize = parseInt(savedFontSize);
-      this.changeFontSize(0); // Apply saved size
-    }
-  }
+
 }
 
 // Initialize accessibility features
 let accessibilityManager;
 document.addEventListener('DOMContentLoaded', () => {
   accessibilityManager = new AccessibilityManager();
-  accessibilityManager.loadPreferences();
 });
 
 // Export for global access
