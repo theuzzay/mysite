@@ -8,6 +8,8 @@
   <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/42/b5/76/42b57666dbe879a032955b85c5dcdcd5.jpg?w=64&h=64">
   <link rel="shortcut icon" type="image/png" href="https://i.pinimg.com/736x/42/b5/76/42b57666dbe879a032955b85c5dcdcd5.jpg?w=64&h=64">
   <link rel="apple-touch-icon" href="https://i.pinimg.com/736x/42/b5/76/42b57666dbe879a032955b85c5dcdcd5.jpg?w=128&h=128">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#ff2222">
   <link rel="stylesheet" href="../js/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700&display=swap">
   <link rel="stylesheet" href="ionicons.min.css">
@@ -311,7 +313,12 @@
           <span class="sidebar_btn"><span></span></span>
         </div>
         <a href="#" class="menu-btn" style="padding:0; background:none; border:none; margin-left:1.5rem;">
-          <img src="https://i.pinimg.com/736x/7c/0e/ee/7c0eeef765f71de93114d1b260d90361.jpg" alt="Avatar" style="width:38px; height:38px; border-radius:50%; box-shadow:0 0 12px #ff2222cc,0 0 0 4px #222a; object-fit:cover; display:block;">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" 
+               data-src="https://i.pinimg.com/736x/7c/0e/ee/7c0eeef765f71de93114d1b260d90361.jpg" 
+               alt="Avatar" 
+               class="lazy"
+               loading="lazy"
+               style="width:38px; height:38px; border-radius:50%; box-shadow:0 0 12px #ff2222cc,0 0 0 4px #222a; object-fit:cover; display:block;">
         </a>
       </div>
     </header>
@@ -336,6 +343,9 @@
     </div>
   </div>
   <script src="../js/script.js"></script>
+  <script src="../js/lazy-loading.js"></script>
+  <script src="../js/mobile-optimization.js"></script>
+  <script src="../js/accessibility.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="../js/particles-config.js"></script>
   <script>
@@ -437,6 +447,19 @@ function setupFiltering() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Service Worker Registration
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('../sw.js')
+        .then(registration => {
+          console.log('SW registered: ', registration);
+        })
+        .catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+    });
+  }
+
   loadBlogData();
   // Filtreleme kurulumunu biraz geciktir çünkü kartlar dinamik olarak yükleniyor
   setTimeout(() => {

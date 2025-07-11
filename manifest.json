@@ -1,0 +1,27 @@
+{
+  "name": "Can Boğaç - Offensive Security Consultant",
+  "short_name": "Can Boğaç",
+  "description": "Personal website of Can Boğaç, Offensive Security Consultant and Cybersecurity Professional",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff2222",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://i.pinimg.com/736x/42/b5/76/42b57666dbe879a032955b85c5dcdcd5.jpg?w=192&h=192",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.pinimg.com/736x/42/b5/76/42b57666dbe879a032955b85c5dcdcd5.jpg?w=512&h=512",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en",
+  "dir": "ltr"
+} 
