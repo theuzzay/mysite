@@ -394,15 +394,15 @@
               </div>
               
               <div class="stats-container">
-                <div class="stat-card">
+                <div class="stat-card" onclick="navigateToBlog('certificates')" style="cursor: pointer;">
                   <div class="stat-number" data-target="certificates-count">0</div>
                   <div class="stat-label">Certificates</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" onclick="navigateToBlog('htb-academy')" style="cursor: pointer;">
                   <div class="stat-number" data-target="modules-count">0</div>
                   <div class="stat-label">Modules Completed</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" onclick="navigateToBlog('ctf')" style="cursor: pointer;">
                   <div class="stat-number" data-target="ctf-count">0</div>
                   <div class="stat-label">CTF/Writeup</div>
                 </div>
@@ -440,6 +440,12 @@
       document.querySelector('[data-target="ctf-count"]').textContent = ctfCount;
     }
     document.addEventListener('DOMContentLoaded', updateStats);
+  </script>
+  <script>
+    // Blog sayfasına kategori ile yönlendirme
+    function navigateToBlog(category) {
+      window.location.href = `blog.html?category=${category}`;
+    }
   </script>
   <script>
     // Accordion başlıklarını aç/kapat

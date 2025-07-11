@@ -439,7 +439,19 @@ function setupFiltering() {
 document.addEventListener('DOMContentLoaded', () => {
   loadBlogData();
   // Filtreleme kurulumunu biraz geciktir çünkü kartlar dinamik olarak yükleniyor
-  setTimeout(setupFiltering, 500);
+  setTimeout(() => {
+    setupFiltering();
+    // URL parametresinden kategoriyi kontrol et
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    if (category) {
+      // İlgili kategori butonunu bul ve tıkla
+      const targetButton = document.querySelector(`[data-category="${category}"]`);
+      if (targetButton) {
+        targetButton.click();
+      }
+    }
+  }, 500);
 });
   </script>
 </body>
