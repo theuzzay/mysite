@@ -331,7 +331,7 @@
               <div class="blog-filter">
                 <button class="active" data-category="certificates">Certificates</button>
                 <button data-category="htb-academy">HTB Academy Modules</button>
-                <button data-category="ctf">CTF/Writeup</button>
+                <button data-category="ctf">CTF</button>
               </div>
               <div class="blog-grid" id="blog-grid">
                 <!-- Blog cards will be dynamically generated here -->
@@ -390,7 +390,7 @@ function generateBlogCards(certificates, modules, ctf) {
     blogGrid.appendChild(card);
   });
   ctf.forEach(item => {
-    const card = createBlogCard(item, 'ctf', 'CTF/Writeup');
+    const card = createBlogCard(item, 'ctf', 'CTF');
     card.style.display = 'none';
     blogGrid.appendChild(card);
   });
