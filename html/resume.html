@@ -456,20 +456,42 @@
 
     // İstatistikleri güncellemek için JSON dosyalarını oku
     async function fetchCount(url) {
-      const res = await fetch(url);
-      if (!res.ok) return 0;
-      const arr = await res.json();
-      return Array.isArray(arr) ? arr.length : 0;
+      try {
+        const res = await fetch(url);
+        if (!res.ok) {
+          console.log(`Failed to fetch ${url}: ${res.status}`);
+          return 0;
+        }
+        const arr = await res.json();
+        const count = Array.isArray(arr) ? arr.length : 0;
+        console.log(`Fetched ${url}: ${count} items`);
+        return count;
+      } catch (error) {
+        console.error(`Error fetching ${url}:`, error);
+        return 0;
+      }
     }
     async function updateStats() {
-      const [certCount, moduleCount, ctfCount] = await Promise.all([
-        fetchCount('../json/certificates.json'),
-        fetchCount('../json/modules.json'),
-        fetchCount('../json/ctf.json')
-      ]);
-      document.querySelector('[data-target="certificates-count"]').textContent = certCount;
-      document.querySelector('[data-target="modules-count"]').textContent = moduleCount;
-      document.querySelector('[data-target="ctf-count"]').textContent = ctfCount;
+      try {
+        console.log('Updating stats...');
+        const [certCount, moduleCount, ctfCount] = await Promise.all([
+          fetchCount('../json/certificates.json'),
+          fetchCount('../json/modules.json'),
+          fetchCount('../json/ctf.json')
+        ]);
+        
+        const certElement = document.querySelector('[data-target="certificates-count"]');
+        const moduleElement = document.querySelector('[data-target="modules-count"]');
+        const ctfElement = document.querySelector('[data-target="ctf-count"]');
+        
+        if (certElement) certElement.textContent = certCount;
+        if (moduleElement) moduleElement.textContent = moduleCount;
+        if (ctfElement) ctfElement.textContent = ctfCount;
+        
+        console.log(`Stats updated: Certificates=${certCount}, Modules=${moduleCount}, CTF=${ctfCount}`);
+      } catch (error) {
+        console.error('Error updating stats:', error);
+      }
     }
     document.addEventListener('DOMContentLoaded', updateStats);
   </script>
