@@ -401,7 +401,7 @@ function createBlogCard(item, category, categoryName) {
   card.className = 'blog-card';
   card.setAttribute('data-category', category);
   const linkText = category === 'certificates' ? 'View Certificate' : 
-                  category === 'htb-academy' ? 'View Module' : 'Read Article';
+                  category === 'htb-academy' ? 'View Module' : 'View Machine';
   let imgUrl = item.image || '';
   const imgHtml = imgUrl ? `<img class="blog-card-thumb" src="${imgUrl}" alt="${item.title} image" loading="lazy">` : `<div class="blog-card-thumb placeholder"></div>`;
   
