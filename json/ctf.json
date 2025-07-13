@@ -4,5 +4,11 @@
     "description": "Cicada is an easy-difficult Windows machine that focuses on beginner Active Directory enumeration and exploitation. In this machine, players will enumerate the domain, identify users, navigate shares, uncover plaintext passwords stored in files, execute a password spray, and use the `SeBackupPrivilege` to achieve full system compromise. ",
     "link": "https://labs.hackthebox.com/achievement/machine/906610/627",
     "image": "https://labs.hackthebox.com/storage/avatars/79616a32a057e5e672dadb51bb96dd04.png"
+  },
+  {
+    "title": "Return",
+    "description": "Return is an easy difficulty Windows machine featuring a network printer administration panel that stores LDAP credentials. These credentials can be captured by inputting a malicious LDAP server which allows obtaining foothold on the server through the WinRM service. User found to be part of a privilege group which further exploited to gain system access. ",
+    "link": "https://labs.hackthebox.com/achievement/machine/906610/401",
+    "image": "https://labs.hackthebox.com/storage/avatars/defa149ea7e259a4709a03a5825e970d.png"
   }
 ] 
