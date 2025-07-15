@@ -10,5 +10,11 @@
     "description": "Return is an easy difficulty Windows machine featuring a network printer administration panel that stores LDAP credentials. These credentials can be captured by inputting a malicious LDAP server which allows obtaining foothold on the server through the WinRM service. User found to be part of a privilege group which further exploited to gain system access. ",
     "link": "https://labs.hackthebox.com/achievement/machine/906610/401",
     "image": "https://labs.hackthebox.com/storage/avatars/defa149ea7e259a4709a03a5825e970d.png"
+  },
+  {
+    "title": "Active",
+    "description": "Active is an easy to medium difficulty machine, which features two very prevalent techniques to gain privileges within an Active Directory environment.",
+    "link": "https://labs.hackthebox.com/achievement/machine/906610/148",
+    "image": "https://labs.hackthebox.com/storage/avatars/5837ac5e28291146a9f2a8a015540c28.png"
   }
 ] 
