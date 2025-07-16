@@ -389,7 +389,8 @@ function generateBlogCards(certificates, modules, ctf) {
     card.style.display = 'none';
     blogGrid.appendChild(card);
   });
-  ctf.forEach(item => {
+  // CTF'leri tersten sırala (en son eklenen en başta)
+  ctf.slice().reverse().forEach(item => {
     const card = createBlogCard(item, 'ctf', 'CTF');
     card.style.display = 'none';
     blogGrid.appendChild(card);
