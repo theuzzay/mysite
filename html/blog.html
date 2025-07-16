@@ -169,6 +169,17 @@
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 1.5rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: -webkit-line-clamp 0.3s, max-height 0.3s;
+      max-height: 6.6em; /* 4 lines x 1.65em line height */
+    }
+    .blog-card:hover .blog-card-description {
+      -webkit-line-clamp: unset;
+      max-height: 100vh;
+      overflow: visible;
     }
     
     .blog-card-link {
