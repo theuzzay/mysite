@@ -22,5 +22,11 @@
     "description": "Forest is an easy Windows machine that showcases a Domain Controller (DC) for a domain in which Exchange Server has been installed. The DC allows anonymous LDAP binds, which are used to enumerate domain objects. The password for a service account with Kerberos pre-authentication disabled can be cracked to gain a foothold. The service account is found to be a member of the Account Operators group, which can be used to add users to privileged Exchange groups. The Exchange group membership is leveraged to gain DCSync privileges on the domain and dump the NTLM hashes, compromising the system. ",
     "link": "https://labs.hackthebox.com/achievement/machine/906610/212",
     "image": "https://labs.hackthebox.com/storage/avatars/7dedecb452597150647e73c2dd6c24c7.png"
+  },
+  {
+    "title": "Heist",
+    "description": "Heist is an easy difficulty Windows box with an &quot;Issues&quot; portal accessible on the web server, from which it is possible to gain Cisco password hashes. These hashes are cracked, and subsequently RID bruteforce and password spraying are used to gain a foothold on the box. The user is found to be running Firefox. The firefox.exe process can be dumped and searched for the administrator's password. ",
+    "link": "https://labs.hackthebox.com/achievement/machine/906610/201",
+    "image": "https://labs.hackthebox.com/storage/avatars/131dbaba68b169bd5ff59ac09420b09f.png"
   }
 ] 
