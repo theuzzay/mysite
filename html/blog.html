@@ -83,6 +83,28 @@
       -ms-overflow-style: none; /* IE and Edge */
     }
     
+    /* Sertifikalar için 3 sütun */
+    .blog-grid[data-active-category="certificates"] {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Modüller ve CTF'ler için 4 sütun */
+    .blog-grid[data-active-category="htb-academy"],
+    .blog-grid[data-active-category="ctf"] {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Büyük ekranlar için daha fazla sütun */
+    @media (min-width: 1400px) {
+      .blog-grid[data-active-category="certificates"] {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .blog-grid[data-active-category="htb-academy"],
+      .blog-grid[data-active-category="ctf"] {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+    
     .blog-grid::-webkit-scrollbar {
       display: none; /* Chrome, Safari and Opera */
     }
@@ -226,7 +248,7 @@
     }
     @media (max-width: 900px) {
       .blog-container { padding: 0 1rem; }
-      .blog-grid { grid-template-columns: 1fr; gap: 1.2rem; max-height: unset; }
+      .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; max-height: unset; }
       .blog-card { padding: 1.1rem; }
       .blog-card-title { font-size: 1.1rem; }
       .blog-filter { gap: 0.8rem; margin-bottom: 1.5rem; }
@@ -399,6 +421,9 @@ function generateBlogCards(certificates, modules, ctf) {
   const blogGrid = document.getElementById('blog-grid');
   blogGrid.innerHTML = '';
 
+  // Varsayılan kategoriyi blog-grid'e ekle
+  blogGrid.setAttribute('data-active-category', 'certificates');
+
   // Modülleri difficulty'ye göre sırala (Hard → Fundamental)
   const difficultyOrder = { 'Hard': 0, 'Medium': 1, 'Easy': 2, 'Fundamental': 3 };
   const sortedModules = modules.sort((a, b) => {
@@ -456,6 +481,7 @@ function createBlogCard(item, category, categoryName) {
 function setupFiltering() {
   const filterButtons = document.querySelectorAll('.blog-filter button');
   const blogCards = document.querySelectorAll('.blog-card');
+  const blogGrid = document.getElementById('blog-grid');
 
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -464,6 +490,9 @@ function setupFiltering() {
       button.classList.add('active');
 
       const selectedCategory = button.getAttribute('data-category');
+
+      // Blog grid'e aktif kategoriyi ekle
+      blogGrid.setAttribute('data-active-category', selectedCategory);
 
       // Kartları filtrele
       blogCards.forEach(card => {
