@@ -14,6 +14,24 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700&display=swap">
   <link rel="stylesheet" href="ionicons.min.css">
   <style>
+    body.resume {
+      background: #000 !important;
+      color: #fff;
+    }
+    .resume-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('https://img.freepik.com/free-photo/mysterious-character-forest_23-2151531939.jpg?semt=ais_items_boosted&w=740') center center no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0.22;
+      pointer-events: none;
+      user-select: none;
+    }
     .about-flex {
       display: flex;
       align-items: center;
@@ -280,6 +298,7 @@
 </head>
 <body class="resume">
     <div id="particles-js" style="position:fixed; inset:0; z-index:0;"></div>
+    <div class="resume-bg"></div>
     <div class="preloader">
       <div class="centrize full-width">
         <div class="vertical-center">
