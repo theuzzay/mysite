@@ -28,5 +28,11 @@
     "description": "Heist is an easy difficulty Windows box with an &quot;Issues&quot; portal accessible on the web server, from which it is possible to gain Cisco password hashes. These hashes are cracked, and subsequently RID bruteforce and password spraying are used to gain a foothold on the box. The user is found to be running Firefox. The firefox.exe process can be dumped and searched for the administrator's password. ",
     "link": "https://labs.hackthebox.com/achievement/machine/906610/201",
     "image": "https://labs.hackthebox.com/storage/avatars/131dbaba68b169bd5ff59ac09420b09f.png"
+  },
+  {
+    "title": "EscapeTwo",
+    "description": "`EscapeTwo` is an easy difficulty Windows machine designed around a complete domain compromise scenario, where credentials for a low-privileged user are provided. We leverage these credentials to access a file share containing a corrupted Excel document. By modifying its byte structure, we extract credentials. These are then sprayed across the domain, revealing valid credentials for a user with access to `MSSQL`, granting us initial access. System enumeration reveals `SQL` credentials, which are sprayed to obtain `WinRM` access. Further domain analysis shows the user has write owner rights over an account managing `ADCS`. This is used to enumerate `ADCS`, revealing a misconfiguration in `Active Directory Certificate Services`. Exploiting this misconfiguration allows us to retrieve the `Administrator` account hash, ultimately leading to complete domain compromise. ",
+    "link": "https://labs.hackthebox.com/achievement/machine/906610/642",
+    "image": "https://labs.hackthebox.com/storage/avatars/d5fcf2425893a73cf137284e2de580e1.png"
   }
 ] 
