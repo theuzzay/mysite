@@ -96,5 +96,12 @@
     "link": "https://academy.hackthebox.com/achievement/1126987/57",
     "image": "https://academy.hackthebox.com/storage/modules/57/logo.png",
     "difficulty": "Easy"
+  },
+  {
+    "title": "SQL Injection Fundamentals",
+    "description": "Database Management systems offer faster storage and retrieval of data in comparison to traditional file storage. This makes them the medium of choice for storing data such as credentials, posts, and comments used by web applications. However, improperly implemented SQL logic can be dangerous and can lead to authentication bypass, information disclosure, remote code execution, and total server compromise.\n\nApplications implement code to create SQL queries to interact with databases. These queries can incorporate user input, which may not be properly sanitized. This leads to the creation of queries that cause unintended actions other than what the developer expected.\n\nThis module aims to develop the skills necessary to identify and exploit SQL injection vulnerabilities, mainly for MySQL databases, and as an intro to all other types of SQL injections.\n\nIn this module, we will cover the following topics:\n\n    Basics of databases and their different types\n    Basics of SQL and MySQL\n    Basic statements and operators in MySQL and how to use them\n    What are SQL injections, and how can we use them\n    Use SQL injections to subvert the web application logic and bypass authentication\n    Use UNION SQL injections to dump data from different tables and databases within the DBMS\n    Use SQL injections to read files of the back-end server\n    Use SQL injections to write a web shell on the back-end server and gain remote control over it\n    How to mitigate such SQL injections and patch your code\n",
+    "link": "https://academy.hackthebox.com/achievement/1126987/33",
+    "image": "https://academy.hackthebox.com/storage/modules/33/logo.png",
+    "difficulty": "Fundamental"
   }
 ] 
