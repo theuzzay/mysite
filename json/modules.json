@@ -104,4 +104,11 @@
     "image": "https://academy.hackthebox.com/storage/modules/33/logo.png",
     "difficulty": "Fundamental"
   }
+] ,
+  {
+    "title": "ADCS Attacks",
+    "description": "This module focuses on Active Directory Certificate Services (ADCS) and its potential misconfigurations. Misconfigurations can allow horizontal and vertical privilege escalation and lateral movement within a domain. It covers all domain escalation scenarios disclosed by SpecterOps and later discoveries, showing how to exploit them from both Windows and Linux systems. Each topic includes hands-on exercises, and the module concludes with a practical skills assessment. Prerequisites include knowledge of Active Directory Enumeration & Attacks and Kerberos Attacks.",
+    "link": "https://academy.hackthebox.com/achievement/1126987/236",
+    "image": "https://academy.hackthebox.com/storage/modules/236/logo.png"
+  }
 ] 
