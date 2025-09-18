@@ -399,7 +399,7 @@ function generateBlogCards(certificates, modules, ctf) {
   const blogGrid = document.getElementById('blog-grid');
   blogGrid.innerHTML = '';
 
-  // Modülleri difficulty'ye göre sırala (Hard → Fundamental)
+  // Modülleri difficulty'ye göre sırala (Hard → Medium → Easy → Fundamental)
   const difficultyOrder = { 'Hard': 0, 'Medium': 1, 'Easy': 2, 'Fundamental': 3 };
   const sortedModules = modules.sort((a, b) => {
     const aOrder = difficultyOrder[a.difficulty] || 4;
